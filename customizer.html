@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Customizer | Ethan & Isaac Customs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="full-page-layout">
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Ethan & Isaac Customs Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Watch Customizer Section -->
+        <section id="watch-builder">
+            <div class="container">
+                <h2>Build Your Custom Timepiece</h2>
+                <div class="customizer-interface">
+                    <!-- This is where the watch images will be layered -->
+                    <div class="watch-display">
+                        <div class="watch-part-placeholder" data-alt-text="Watch Bezel">
+                            <img id="bezel-img" src="https://i.ibb.co/bBwz9zX/bezel-smooth.png" alt="Watch Bezel">
+                        </div>
+                        <div class="watch-part-placeholder" data-alt-text="Watch Dial">
+                            <img id="dial-img" src="https://i.ibb.co/3m1Kz5R/dial-white.png" alt="Watch Dial">
+                        </div>
+                        <div class="watch-part-placeholder" data-alt-text="Watch Case">
+                            <img id="case-img" src="https://i.ibb.co/d2x2pCR/case-steel.png" alt="Watch Case">
+                        </div>
+                        <div class="watch-part-placeholder" data-alt-text="Watch Strap">
+                            <img id="strap-img" src="https://i.ibb.co/bQdJ6Sg/strap-leather.png" alt="Watch Strap">
+                        </div>
+                    </div>
+
+                    <!-- These are the controls for the user -->
+                    <div class="customization-options">
+                        <fieldset>
+                            <legend>Case Material</legend>
+                            <label><input type="radio" name="case" value="steel" checked> Oystersteel</label>
+                            <label><input type="radio" name="case" value="gold"> Yellow Gold</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Bezel</legend>
+                            <label><input type="radio" name="bezel" value="smooth" checked> Smooth</label>
+                            <label><input type="radio" name="bezel" value="fluted"> Fluted</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Dial Color</legend>
+                            <label><input type="radio" name="dial" value="white" checked> White</label>
+                            <label><input type="radio" name="dial" value="black"> Black</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Strap</legend>
+                            <label><input type="radio" name="strap" value="leather" checked> Leather</label>
+                            <label><input type="radio" name="strap" value="metal"> Jubilee</label>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ethan & Isaac Customs. All Rights Reserved. Website created by SYF Studios.</p>
+        </div>
+    </footer>
+
+    <!-- Link to the customizer JavaScript file -->
+    <script src="customizer.js"></script>
+
+</body>
+</html>
