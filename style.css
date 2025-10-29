@@ -89,7 +89,7 @@ header ul {
 .hero {
     /* You would add a background image of a watch here */
       /* 1. Add the background image with a semi-transparent dark overlay for text readability */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/herowatch.jpg' alt = "noooooooooooooooooooooooooooooooooooooooo");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/herowatch.jpeg' alt = "noooooooooooooooooooooooooooooooooooooooo");
     /*https://images.unsplash.com/photo-1619134771952-782d37155345?q=80&w=2070&auto=format&fit=crop*/
     /* 2. Ensure the image covers the whole section and is centered */
     background-size: cover;
@@ -614,6 +614,7 @@ footer {
 footer p {
     margin: 0;
 }
+
 
 
 
