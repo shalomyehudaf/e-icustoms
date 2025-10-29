@@ -89,8 +89,8 @@ header ul {
 .hero {
     /* You would add a background image of a watch here */
       /* 1. Add the background image with a semi-transparent dark overlay for text readability */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/herowatch.jpg');
-    /*https://images.unsplash.com/photo-1619134771952-782d37155345?q=80&w=2070&auto=format&fit=crop*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/herowatch.jpg');/*https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=2070&auto=format&fit=crop');*/
+    
     /* 2. Ensure the image covers the whole section and is centered */
     background-size: cover;
     background-position: center;
@@ -98,17 +98,19 @@ header ul {
     /* 3. Change text color to white to stand out against the dark background */
     color: #fff;
     padding: 7.25rem 0; /* Increased padding to make the whole section larger */
-    
-    /* Enlarge heading text */
-    h1 {
-        font-size: 3.0rem; /* Adjust as needed */
-    }
-
-    /* Enlarge paragraph text */
-    p {
-        font-size: 1.8rem; /* Adjust as needed */
-    }
     text-align: center;
+
+    /* Add the fade-in animation */
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Styles for the text inside the hero section */
+.hero h1 {
+    font-size: 3.0rem; /* Adjust as needed */
+}
+
+.hero p {
+    font-size: 1.8rem; /* Adjust as needed */
 }
 
 /* A section to feature a few key services */
@@ -556,6 +558,16 @@ a.service-link {
     }
 }
 
+/* --- Keyframe Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* --- Gallery Modal (Lightbox) Styles --- */
 .modal-overlay {
     position: fixed;
@@ -614,14 +626,3 @@ footer {
 footer p {
     margin: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
