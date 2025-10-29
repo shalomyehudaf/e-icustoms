@@ -561,7 +561,7 @@ a.service-link {
 /* --- Keyframe Animations --- */
 @keyframes fadeIn {
     from {
-        opacity: 1;
+        opacity: 0;
     }
     to {
         opacity: 1;
@@ -626,5 +626,6 @@ footer {
 footer p {
     margin: 0;
 }
+
 
 
