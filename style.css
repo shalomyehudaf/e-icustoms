@@ -446,7 +446,7 @@ a.service-link {
 
 /* --- Gallery Page Styles --- */
 .gallery-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('placeholder-for-gallery-hero.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('glryhero.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -626,3 +626,4 @@ footer {
 footer p {
     margin: 0;
 }
+
