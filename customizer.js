@@ -39,14 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 3. Change the image source
                 // --- Using placeholder images from an online service ---
                 const imageUrls = {
-                    'case-steel': 'https://i.postimg.cc/m2x116Jc/case-steel.png',
-                    'case-gold': 'https://i.postimg.cc/L6T0YxG3/case-gold.png',
-                    'dial-white': 'https://i.postimg.cc/L8pL5f50/dial-white.png',
-                    'dial-black': 'https://i.postimg.cc/Nf21k1sT/dial-black.png',
-                    'strap-leather': 'https://i.postimg.cc/25TFBp1M/strap-leather.png',
-                    'strap-metal': 'https://i.postimg.cc/8z3X7pMm/strap-metal.png',
-                    'bezel-smooth': 'https://i.postimg.cc/W1d4TRtD/bezel-smooth.png',
-                    'bezel-fluted': 'https://i.postimg.cc/4dFm9WfV/bezel-fluted.png'
+                    'case-steel': 'placeholder-for-case-steel.png',
+                    'case-gold': 'placeholder-for-case-gold.png',
+                    'dial-white': 'placeholder-for-dial-white.png',
+                    'dial-black': 'placeholder-for-dial-black.png',
+                    'strap-leather': 'placeholder-for-strap-leather.png',
+                    'strap-metal': 'placeholder-for-strap-metal.png',
+                    'bezel-smooth': 'placeholder-for-bezel-smooth.png',
+                    'bezel-fluted': 'placeholder-for-bezel-fluted.png'
                 };
                 const imageKey = `${partName}-${selectedValue}`;
                 imgElement.src = imageUrls[imageKey];
