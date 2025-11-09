@@ -32,30 +32,13 @@ body {
 
 /* Header and Navigation */
 header {
-    /* --- Default Solid Header State --- */
     background: #FCFCFC;
-    color: #263238; /* Dark text for solid header */
+    color: #263238;
     padding: 1rem 0;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures the header stays on top of other content */
-    transition: background-color 0.3s ease-in-out, border-bottom 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-bottom: 1px solid #ECEFF1;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-/* --- Transparent Header State (Only for pages with a hero image) --- */
-body.has-hero-image header {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
-    color: #fff; /* White text for transparent header */
-    box-shadow: none;
-    border-bottom: none;
-}
-
-/* Scrolled state for the transparent header */
-body.has-hero-image header.scrolled {
-    background: #FCFCFC;
-    color: #263238; /* Back to dark text */
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-bottom: 1px solid #ECEFF1;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
@@ -73,21 +56,10 @@ header .container nav ul li:hover {
 }
 
 header a {
-    color: #263238; /* Default to dark text color */
+    color: #263238;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
-    transition: color 0.3s ease-in-out;
-}
-
-/* Links inside a transparent header should be white */
-body.has-hero-image header a {
-    color: #fff;
-}
-
-/* On scroll, links inside a transparent header get their dark color back */
-body.has-hero-image header.scrolled a {
-    color: #263238;
 }
 
 header .logo {
@@ -241,23 +213,26 @@ a.service-link {
 
 /* New wrapper to enable the slider */
 .testimonial-slider-wrapper {
-    overflow: hidden; /* This is crucial to hide the other testimonials */
+    overflow: hidden;
     position: relative;
+    /* Add a gradient mask for a smooth fade-out effect on the sides */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 }
 
 .testimonials-grid {
-    display: grid;
-    /* New: Make grid items children of the grid */
-    grid-auto-flow: column;
-    grid-auto-columns: 100%; /* Each item takes the full width of the container */
-    max-width: 1200px; /* Constrain the width for a better look on large screens */
+    /* New CSS Animation Slider */
+    display: flex; /* Use flexbox for a single row */
+    width: fit-content; /* Make the container as wide as its content */
+    animation: scroll 30s linear infinite; /* The continuous scroll animation */
     margin: 0 auto;
-    transition: transform 0.5s ease-in-out; /* The slide animation */
+}
+
+.testimonial-slider-wrapper:hover .testimonials-grid {
+    animation-play-state: paused; /* Pause the animation on hover */
 }
 
 .testimonial-item {
-    background: #FCFCFC; /* Off-white to stand out from the section background */
-    border: 1px solid #ECEFF1;
     border-radius: 8px;
     padding: 2rem;
     display: flex;
@@ -265,7 +240,10 @@ a.service-link {
     align-items: center;
     text-align: center;
     /* Add some horizontal margin to prevent items from touching on wide grids */
-    margin: 0 1rem;
+    margin: 1rem; /* Add margin for spacing */
+    width: 350px; /* Give each item a fixed width */
+    flex-shrink: 0; /* Prevent items from shrinking */
+    background: #FCFCFC;
 }
 
 .testimonial-photo {
@@ -299,27 +277,7 @@ a.service-link {
 
 /* --- Testimonial Slider Dots --- */
 .testimonial-dots {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin: 0 6px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot:hover {
-    background-color: #aaa;
-}
-
-.dot.active {
-    background-color: #F9A03F; /* Active dot color (orange) */
+    display: none; /* Hide dots as they are not compatible with this slider type */
 }
 
 /* Watch Builder Section */
@@ -661,7 +619,6 @@ a.service-link {
     /* --- Header & Navigation --- */
     header .container {
         flex-direction: column;
-        flex-direction: row; /* Revert to row for hamburger alignment */
         justify-content: space-between;
     }
 
@@ -689,6 +646,11 @@ a.service-link {
         align-items: center;
         gap: 1rem; /* Increase gap for better touch targets */
         width: 100%;
+    }
+    
+    /* New Rule: Ensure links inside the active mobile nav are always dark */
+    header nav.is-active a {
+        color: #263238 !important; /* Force dark color for readability */
     }
     
     header .logo img {
@@ -732,7 +694,13 @@ a.service-link {
 
     /* --- Testimonials --- */
     .testimonial-item {
-        margin: 0; /* Remove horizontal margin on mobile */
+        width: 80vw; /* Make testimonials wider on mobile */
+    }
+
+    .testimonial-slider-wrapper {
+        /* Remove the gradient mask on mobile for better readability */
+        -webkit-mask-image: none;
+        mask-image: none;
     }
 }
 
@@ -743,6 +711,17 @@ a.service-link {
     }
     to {
         opacity: 1;
+    }
+}
+
+/* New Keyframe Animation for the Slider */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* Move the slider to the left by the width of the first half of the items */
+        transform: translateX(calc(-370px * 5)); /* 370px (width + margin) * 5 items */
     }
 }
 
