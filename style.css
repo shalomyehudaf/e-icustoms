@@ -11,6 +11,7 @@ body {
     width: 95%;
     margin: auto;
     overflow: hidden;
+    max-width: 1400px; /* Added for better control on very large screens */
 }
 
 /* A general purpose button style */
@@ -106,11 +107,17 @@ header ul {
 
 /* Styles for the text inside the hero section */
 .hero h1 {
-    font-size: 3.0rem; /* Adjust as needed */
+    font-size: 3.0rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero p {
     font-size: 1.8rem; /* Adjust as needed */
+    margin-top: 0.5rem;
+}
+
+.hero .cta-button {
+    margin-top: 1rem;
 }
 
 /* A section to feature a few key services */
@@ -420,6 +427,16 @@ a.service-link {
     margin-top: 0;
 }
 
+/* New style for the about page CTA button */
+.about-content .cta-button {
+    margin-top: 1rem;
+}
+
+/* New style for the about page final statement */
+.final-statement {
+    text-align: center;
+}
+
 .about-text h3 {
     font-size: 1.5rem;
     color: #263238;
@@ -431,12 +448,6 @@ a.service-link {
     color: #546E7A;
 }
 
-.final-statement {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid #ECEFF1; /* Separator line */
-}
-
 /* Responsive adjustments for the about page grid */
 @media (max-width: 768px) {
     .about-grid {
@@ -446,7 +457,7 @@ a.service-link {
 
 /* --- Gallery Page Styles --- */
 .gallery-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('glryhero.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('placeholder-for-gallery-hero.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -558,6 +569,60 @@ a.service-link {
     }
 }
 
+/* --- General Mobile Responsive Styles --- */
+@media (max-width: 768px) {
+    /* --- Header & Navigation --- */
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    header .logo img {
+        height: 80px; /* Smaller logo on mobile */
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+        padding: 4rem 0; /* Reduce padding on mobile */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Smaller text for mobile */
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* --- Watch Customizer --- */
+    .customizer-interface {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .watch-display {
+        width: 300px; /* Make watch display smaller */
+        height: 300px;
+    }
+
+    .customization-options {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* --- About Page --- */
+    .about-text h2 {
+        font-size: 1.8rem; /* Adjust heading size for mobile */
+        text-align: center;
+    }
+}
+
 /* --- Keyframe Animations --- */
 @keyframes fadeIn {
     from {
@@ -626,4 +691,3 @@ footer {
 footer p {
     margin: 0;
 }
-
