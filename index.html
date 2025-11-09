@@ -14,7 +14,7 @@
             <a href="index.html" class="logo">
                 <img src="images/logo.png" alt="Ethan & Isaac Customs Logo">
             </a>
-            <nav>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -23,6 +23,9 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <button class="hamburger-menu" aria-label="Toggle Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
@@ -70,6 +73,8 @@
         <!-- Testimonials Section -->
         <section id="testimonials">
             <div class="container">
+                <!-- Wrapper for the slider functionality -->
+                <div class="testimonial-slider-wrapper">
                 <h2>What Our Clients Say</h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-item">
@@ -89,6 +94,7 @@
                         <span class="testimonial-service">Vintage Restoration</span>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -99,6 +105,10 @@
             <p>&copy; 2025 Ethan & Isaac Customs. All Rights Reserved. Website created by SYF Studios.</p>
         </div>
     </footer>
+
+    <!-- Scripts for functionality -->
+    <script src="main.js" defer></script>
+    <script src="testimonial-slider.js" defer></script>
 
 </body>
 </html>
