@@ -32,19 +32,28 @@ body {
 
 /* Header and Navigation */
 header {
-    /* Default transparent state */
-    /* Add a subtle gradient to ensure text is always readable */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
-    color: #fff; /* White text for transparent header */
+    /* --- Default Solid Header State --- */
+    background: #FCFCFC;
+    color: #263238; /* Dark text for solid header */
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000; /* Ensures the header stays on top of other content */
     transition: background-color 0.3s ease-in-out, border-bottom 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-bottom: 1px solid #ECEFF1;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Scrolled state for the header */
-header.scrolled {
+/* --- Transparent Header State (Only for pages with a hero image) --- */
+body.has-hero-image header {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+    color: #fff; /* White text for transparent header */
+    box-shadow: none;
+    border-bottom: none;
+}
+
+/* Scrolled state for the transparent header */
+body.has-hero-image header.scrolled {
     background: #FCFCFC;
     color: #263238; /* Back to dark text */
     border-bottom: 1px solid #ECEFF1;
@@ -64,15 +73,20 @@ header .container nav ul li:hover {
 }
 
 header a {
-    color: inherit; /* Inherit color from header */
+    color: #263238; /* Default to dark text color */
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
     transition: color 0.3s ease-in-out;
 }
 
-/* On scroll, links inside header get their dark color back */
-header.scrolled a {
+/* Links inside a transparent header should be white */
+body.has-hero-image header a {
+    color: #fff;
+}
+
+/* On scroll, links inside a transparent header get their dark color back */
+body.has-hero-image header.scrolled a {
     color: #263238;
 }
 

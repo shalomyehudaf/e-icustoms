@@ -60,13 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- Handle the loop ---
         testimonialsGrid.addEventListener('transitionend', () => {
-            if (currentIndex === 0) { // If we are at the cloned last slide
-                testimonialsGrid.style.transition = 'none'; // Turn off animation
-                showTestimonial(totalOriginalItems); // Jump to the real last slide
-            }
-            if (currentIndex === totalOriginalItems + 1) { // If we are at the cloned first slide
+            // If we have transitioned to the cloned first slide (at the end)
+            if (currentIndex >= totalOriginalItems + 1) {
                 testimonialsGrid.style.transition = 'none'; // Turn off animation
                 showTestimonial(1); // Jump to the real first slide
+            }
+            // If we have transitioned to the cloned last slide (at the beginning)
+            if (currentIndex <= 0) {
+                testimonialsGrid.style.transition = 'none'; // Turn off animation
+                showTestimonial(totalOriginalItems); // Jump to the real last slide
             }
         });
 
