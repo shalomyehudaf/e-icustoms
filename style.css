@@ -33,7 +33,8 @@ body {
 /* Header and Navigation */
 header {
     /* Default transparent state */
-    background: transparent;
+    /* Add a subtle gradient to ensure text is always readable */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
     color: #fff; /* White text for transparent header */
     padding: 1rem 0;
     position: sticky;
