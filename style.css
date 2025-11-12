@@ -69,12 +69,12 @@ header .logo {
     align-items: center;
 }
 header .logo img {
-    height: 100px; /* You can adjust this value to get the perfect size */
+    height: 125px; /* You can adjust this value to get the perfect size */
     width: auto; /* Maintains the aspect ratio */
 }
 
 header .logo img:hover {
-    height: 105px;
+    height: 130px;
     width: auto;
 }
 
@@ -783,3 +783,4 @@ footer {
 footer p {
     margin: 0;
 }
+
